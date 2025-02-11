@@ -1,0 +1,21 @@
+{
+  "tasks": [],
+  "users": [
+    {
+      "id": "a015b29b-b0f6-4f0c-9484-c149dc9ebaeb",
+      "email": "Donnarumma@psg.fr"
+    },
+    {
+      "id": "3e2d0d7c-4371-4518-ba7c-40b5decf92a7",
+      "email": "Hakimi@psg.fr"
+    },
+    {
+      "id": "6539c53d-a789-45d0-a78c-046cd7882cae",
+      "email": "Pacho@psg.fr"
+    },
+    {
+      "id": "9122def2-542b-4fb9-8bd8-1366e5181126",
+      "email": "Marquinhos@psg.fr"
+    }
+  ]
+}
