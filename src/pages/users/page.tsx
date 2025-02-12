@@ -1,5 +1,6 @@
 import {createUser, deleteUser, fetchUsers, User} from "../../shared/api.ts";
 import {FormEvent, Suspense, use, useState, useTransition} from "react";
+import {ErrorBoundary} from "react-error-boundary";
 
 const defaultUsersPromise = fetchUsers();
 
@@ -16,9 +17,13 @@ export function UsersPage() {
                 <CreateUserForm refetchUsers={refetchUsers}/>
             </section>
             <section>
-                <Suspense fallback={<div className="text-2xl font-bold text-sky-500">Loading...</div>}>
-                    <UserList usersPromise={usersPromise} refetchUsers={refetchUsers}/>
-                </Suspense>
+                <ErrorBoundary
+                    fallbackRender={(e) => <div className="text-2xl font-bold text-red-500">Ooops! Something went
+                        wrong {JSON.stringify(e)} </div>}>
+                    <Suspense fallback={<div className="text-2xl font-bold text-sky-500">Loading...</div>}>
+                        <UserList usersPromise={usersPromise} refetchUsers={refetchUsers}/>
+                    </Suspense>
+                </ErrorBoundary>
             </section>
         </main>
     )
